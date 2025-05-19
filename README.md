@@ -124,7 +124,7 @@ Sugestões, melhorias ou ideias são bem-vindas! Abra uma issue ou envie um PR.
 
 [//]: # (> *&#40;Screenshot do jogo rodando&#41;*)
 <div align="center">
-  <img src="src/main/resources/images/screenshot/forca.gif" alt="gif do jogo" width="30%" style="margin-right: 10px;"/>
+  <img src="src/main/resources/images/screenshot/forca.gif" alt="gif do jogo" width="50%" style="margin-right: 10px;"/>
 </div>
 
 ---
