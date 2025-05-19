@@ -1,0 +1,53 @@
+.root {
+    -fx-padding: 20px;
+    -fx-background-color: #7FFFD4; /* verde-água */
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-size: 16px;
+}
+
+.label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #8B008B; /* roxo escuro */
+}
+
+.button {
+    -fx-background-color: #FFA07A;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+/* Hover (passar o mouse) */
+.button:hover {
+    -fx-background-color: #FF6347; /* Cor mais escura ao passar o mouse */
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.text-field {
+    -fx-background-color: #FFFACD;
+    -fx-border-color: #FF69B4;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000080;
+}
+
+.text-area {
+    -fx-background-color: #E6E6FA;
+    -fx-border-color: #BA55D3;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-font-family: "Courier New";
+    -fx-font-size: 16px;
+}
+
+.forca-personalizada {
+    -fx-font-family: "monospaced";
+}
+
+.masked-style {
+    -fx-font-size: 40px;
+}
