@@ -96,6 +96,7 @@ public class GameUI {
             guessButton.setDisable(true);
             inputField.setDisable(true);
             restartButton.setVisible(true);
+            showRandomWinImage();
         } else if (controller.isLost()) {
             statusLabel.setText("Você perdeu! A palavra era: " + controller.getWordToGuess());
             wordLabel.setText(controller.getWordToGuess().replaceAll(".", "$0 "));
@@ -137,6 +138,36 @@ public class GameUI {
 
     private void showRandomLossImage() {
         File folder = new File("src/main/resources/images/lost");
+        File[] files = folder.listFiles((dir, name) -> name.endsWith(".png") || name.endsWith(".jpg") || name.endsWith(".jpeg"));
+
+        if (files == null || files.length == 0) return;
+
+        File selected = files[new Random().nextInt(files.length)];
+        Image image = new Image(selected.toURI().toString());
+
+        if (lossImageView == null) {
+            lossImageView = new ImageView();
+            lossImageView.fitWidthProperty().bind(root.widthProperty());
+            lossImageView.fitHeightProperty().bind(root.heightProperty());
+            lossImageView.setPreserveRatio(false);
+        }
+
+        lossImageView.setImage(image);
+        root.getChildren().add(lossImageView); // root deve ser um atributo da classe para estar acessível
+
+        FadeTransition blink = new FadeTransition(Duration.seconds(0.5), lossImageView);
+        blink.setFromValue(1.0);
+        blink.setToValue(0.0);
+        blink.setCycleCount(7);
+        blink.setAutoReverse(true);
+        blink.setOnFinished(e -> {
+            root.getChildren().remove(lossImageView);
+        });
+        blink.play();
+    }
+
+    private void showRandomWinImage() {
+        File folder = new File("src/main/resources/images/win");
         File[] files = folder.listFiles((dir, name) -> name.endsWith(".png") || name.endsWith(".jpg") || name.endsWith(".jpeg"));
 
         if (files == null || files.length == 0) return;
