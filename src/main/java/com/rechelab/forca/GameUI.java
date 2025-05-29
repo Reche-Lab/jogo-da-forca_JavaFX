@@ -158,7 +158,7 @@ public class GameUI {
         }
 
         lossImageView.setImage(image);
-        root.getChildren().add(lossImageView); // root deve ser um atributo da classe para estar acessível
+        root.getChildren().add(lossImageView);
 
         FadeTransition blink = new FadeTransition(Duration.seconds(0.5), lossImageView);
         blink.setFromValue(1.0);
